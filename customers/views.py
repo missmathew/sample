@@ -5,7 +5,7 @@ from orders.models import*
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.models import auth
 from django.contrib import messages
-
+from django.http import HttpResponse
 
 # Create your views here.
 def login(request):
@@ -164,6 +164,17 @@ def user_cartclear(request):
     messages.success(request, 'your order has been placed successfully')
     return redirect('sample')
 
+def number(request):
+    number = 20
+    if number>=0:
+        return HttpResponse('positive')
+    else:
+        return HttpResponse('negative')
+
+
  
-     
+    
+
+
+    
      
