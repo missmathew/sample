@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single detail</title>
+    
+</head>
+<body>
+    <h1 style="color: aqua;">view single row details</h1>
+    {% for i in single %}  
+    <hr> 
+    <h2>title:{{i.title}}</h2>
+    <h4>price:{{i.price}}</h4>
+    <h2>description{{i.description}}</h2>
+    <h4><img src="{{i.image.url}}" alt="image unvailable" style="height: 200; width: 200;"></h4>
+    {% endfor %}
+</body>
+</html>

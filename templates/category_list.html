@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CATEGORY PRODUCTS</title>
+</head>
+<body>
+   <h1 style="color: rgb(255, 0, 0);"> ADD CATEGORY PRODUCTS</h1>
+    <form action="{% url 'category_list' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       
+        <label for="Category_Name">Category_Name:</label><br>
+        <input type="text" id="Category_Name" name="Category_Name" placeholder="Enter Category Name"><br>   
+        
+        <input type="submit" value="Submit">   
+      </form> 
+       
+</body>
+</html>

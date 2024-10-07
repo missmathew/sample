@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details </title>
+</head>
+<body>
+    {% for i in view_edit %}
+    <form action="{% url 'edit_product_image' i.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       
+        <label for="title">title:</label><br>
+    <input type="text" value= "{{i.title}}" id="title" name="title" placeholder="Enter title"><br>   
+        <label for="price">price:</label><br>
+        <input type="text" value= "{{i.price}}"id="price" name="price" placeholder="Enter your text here"><br>  
+        
+        
+        <label for="image"></label><br>
+        <input type='file' id="image" name="Room image"><br>
+        <input type="submit" value="Submit">   
+      </form>   
+      {% endfor %} 
+</body>
+</html>

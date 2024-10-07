@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+
+        <tr>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <TH>PASSWORD</TH>
+            <th>CONFIRM PASSWORD</th>
+            <th>ADDRESS </th>
+            <th>PHONE</th>
+            <th></th>
+            
+        </tr>
+        {% for i in customer_details %}
+            <tr>
+                <td>{{ i.username }}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.confirmpassword}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.phone}}</td>
+
+               
+                
+                
+                <td><a href="{% url 'edit_customer_details' i.id %}"><button>Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+
+        <tr>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <TH>DESCRIPTION</TH>
+            <th>IMAGE</th>
+            <th>View </th>
+            <th>Edit</th>
+            <th></th>
+            
+        </tr>
+        {% for i in table %}
+            <tr>
+                <td>{{ i.title }}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.description}}</td>
+               
+                <th><img src="{{i.image.url}}" alt="image unavailable" height="100", width="100"></th>
+                <td><a href="{% url 'view_single_row' i.id %}"><button>View More</button></a></td>
+                <td><a href="{% url 'view' i.id %}"><button>Edit</button></a></td>
+                <td><a href="{% url 'edit_product' i.id %}"><button>Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
